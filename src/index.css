@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-cartoon {
+    font-family: 'Fredoka', 'Plus Jakarta Sans', cursive, sans-serif;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes wagSlow {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-wag {
+  animation: wagSlow 1.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Playful cartoon card styling with thick friendly outline and offset drop shadow */
+.cartoon-card {
+  border: 3px solid #3d2314;
+  box-shadow: 4px 5px 0px #3d2314;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cartoon-card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 8px 0px #3d2314;
+}
+
+.cartoon-btn {
+  border: 2.5px solid #3d2314;
+  box-shadow: 3px 4px 0px #3d2314;
+  transition: all 0.12s ease-in-out;
+}
+
+.cartoon-btn:hover {
+  transform: translate(-1px, -2px);
+  box-shadow: 4px 5px 0px #3d2314;
+}
+
+.cartoon-btn:active {
+  transform: translate(2px, 3px);
+  box-shadow: 1px 1px 0px #3d2314;
+}
+
+/* Continuous Marquee Animations */
+@keyframes marqueeRTL {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeLTR {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marqueeRTL 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marqueeLTR 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-ltr:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl,
+  .animate-marquee-ltr {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Walking background parallax */
+@keyframes walkBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -400px 0%;
+  }
+}
+
+.animate-walk-bg {
+  animation: walkBackground 8s linear infinite;
+}
+
+/* Custom whimsical scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8E7;
+}
+::-webkit-scrollbar-thumb {
+  background: #F59E0B;
+  border-radius: 9999px;
+  border: 2px solid #FFF8E7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
