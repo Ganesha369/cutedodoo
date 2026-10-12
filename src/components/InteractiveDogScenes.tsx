@@ -4,6 +4,7 @@ import { SceneWalking } from './scenes/SceneWalking';
 import { SceneGrandma } from './scenes/SceneGrandma';
 import { SceneFeedingTray } from './scenes/SceneFeedingTray';
 import { SceneStreetDogs } from './scenes/SceneStreetDogs';
+import { InteractivePlayfulModesTheater } from './InteractivePlayfulModesTheater';
 import { sounds } from '../utils/soundEffects';
 import { ChevronLeft, ChevronRight, Film, Sparkles } from 'lucide-react';
 
@@ -66,19 +67,19 @@ export const InteractiveDogScenes: React.FC = () => {
   };
 
   return (
-    <section id="scenes" className="py-16 md:py-24 bg-[#FFF9ED] border-b-3 border-amber-950/10 relative">
+    <section id="scenes" className="py-16 md:py-24 bg-[#FFF9F0] border-b border-[#49200B]/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-300 border-2 border-amber-950 rounded-full text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] mb-3">
-            <Film className="w-3.5 h-3.5 text-amber-950" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
+            <Film className="w-3.5 h-3.5 text-[#49200B]" />
             <span>Interactive Animated Theater · 5 Life Scenes</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-cartoon text-amber-950 tracking-tight mb-3">
-            The Life &amp; Mission of <span className="text-amber-500">CuteDODO</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+            The Life &amp; Mission of <span className="text-[#FF9F00]">CuteDODO</span>
           </h2>
-          <p className="text-base sm:text-lg text-amber-900/80 font-medium">
+          <p className="text-base sm:text-lg text-[#79513B] font-medium leading-relaxed">
             Explore 5 hand-crafted animated scenes showing Dodo playing, walking on leash, cuddling with grandma, enjoying meals, and sharing food with street dogs.
           </p>
         </div>
@@ -93,10 +94,10 @@ export const InteractiveDogScenes: React.FC = () => {
                   sounds.pop();
                   setActiveSceneIdx(idx);
                 }}
-                className={`cartoon-btn px-3 sm:px-5 py-2 sm:py-3 rounded-2xl flex items-center gap-2 whitespace-nowrap text-xs sm:text-sm font-bold transition-all ${
+                className={`cartoon-btn px-3 sm:px-5 py-2 sm:py-3 rounded-2xl flex items-center gap-2 whitespace-nowrap text-xs sm:text-sm font-bold font-heading transition-all ${
                   activeSceneIdx === idx
-                    ? 'bg-amber-400 text-amber-950 shadow-[3px_4px_0px_#3d2314] -translate-y-1'
-                    : 'bg-white text-amber-900 hover:bg-amber-100'
+                    ? 'bg-[#FFD36A] text-[#49200B] shadow-[3px_3px_0px_#49200B] -translate-y-0.5'
+                    : 'bg-white text-[#79513B] hover:bg-[#FFF3DC] border border-[#49200B]/20'
                 }`}
               >
                 <span className="text-base sm:text-lg">{scene.icon}</span>
@@ -121,27 +122,30 @@ export const InteractiveDogScenes: React.FC = () => {
         </div>
 
         {/* Bottom Pager Controls */}
-        <div className="flex items-center justify-between mt-8 pt-6 border-t-2 border-amber-950/10">
+        <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#49200B]/10 mb-12">
           <button
             onClick={handlePrev}
-            className="cartoon-btn px-4 sm:px-5 py-2.5 bg-white hover:bg-amber-100 rounded-xl text-xs sm:text-sm font-bold text-amber-950 flex items-center gap-2"
+            className="cartoon-btn px-4 sm:px-5 py-2.5 bg-white hover:bg-[#FFF3DC] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center gap-2 shadow-[2px_2px_0px_#49200B]"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Previous Scene</span>
           </button>
 
-          <div className="text-xs font-bold font-cartoon text-amber-900">
+          <div className="text-xs font-bold font-heading text-[#79513B] hidden sm:block">
             Scene {activeSceneIdx + 1} of {scenes.length} · {currentScene.subtitle}
           </div>
 
           <button
             onClick={handleNext}
-            className="cartoon-btn px-4 sm:px-5 py-2.5 bg-amber-400 hover:bg-amber-300 rounded-xl text-xs sm:text-sm font-bold text-amber-950 flex items-center gap-2"
+            className="cartoon-btn px-4 sm:px-5 py-2.5 bg-[#FFD36A] hover:bg-[#FF9F00] rounded-xl text-xs sm:text-sm font-bold font-heading text-[#49200B] flex items-center gap-2 shadow-[2px_2px_0px_#49200B]"
           >
             <span>Next Scene</span>
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
+
+        {/* 5 Playfulness Modes Interactive Stage */}
+        <InteractivePlayfulModesTheater />
 
       </div>
     </section>

@@ -65,21 +65,21 @@ export const Gallery: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#FFFDF7] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#FFF9F0] border-b border-[#49200B]/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-200 border-2 border-amber-950 rounded-full text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
             <span>📸 Real Pet Gallery</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-cartoon text-amber-950 tracking-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
             Meet the Real Dodo
           </h2>
-          <p className="text-base sm:text-lg text-amber-800 font-bold font-cartoon">
+          <p className="text-base sm:text-lg text-[#FF9F00] font-bold font-heading">
             No stock photos: this is Dodo himself.
           </p>
-          <p className="text-sm text-amber-900/70 mt-1 max-w-xl mx-auto">
+          <p className="text-sm text-[#79513B] mt-1 max-w-xl mx-auto font-medium">
             From playful candid moments with the family to cartoon storybook creations, see the pure joy that inspired $DODO!
           </p>
 
@@ -90,11 +90,11 @@ export const Gallery: React.FC = () => {
                 sounds.pop();
                 setViewMode('both');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-1.5 ${
-                viewMode === 'both' ? 'bg-amber-400 text-amber-950' : 'bg-white text-amber-900'
+              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+                viewMode === 'both' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-amber-900" />
+              <Sparkles className="w-4 h-4 text-[#49200B]" />
               <span>Side-by-Side</span>
             </button>
 
@@ -103,11 +103,11 @@ export const Gallery: React.FC = () => {
                 sounds.pop();
                 setViewMode('real');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-1.5 ${
-                viewMode === 'real' ? 'bg-amber-400 text-amber-950' : 'bg-white text-amber-900'
+              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+                viewMode === 'real' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Camera className="w-4 h-4 text-amber-900" />
+              <Camera className="w-4 h-4 text-[#49200B]" />
               <span>Real Photos 📸</span>
             </button>
 
@@ -116,11 +116,11 @@ export const Gallery: React.FC = () => {
                 sounds.pop();
                 setViewMode('cartoon');
               }}
-              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-1.5 ${
-                viewMode === 'cartoon' ? 'bg-amber-400 text-amber-950' : 'bg-white text-amber-900'
+              className={`cartoon-btn px-4 py-2 text-xs sm:text-sm font-bold font-heading rounded-xl flex items-center gap-1.5 ${
+                viewMode === 'cartoon' ? 'bg-[#FFD36A] text-[#49200B]' : 'bg-[#FFF9F0] text-[#79513B] hover:bg-[#F7D9C7]'
               }`}
             >
-              <Palette className="w-4 h-4 text-amber-900" />
+              <Palette className="w-4 h-4 text-[#49200B]" />
               <span>Cartoon Art 🎨</span>
             </button>
           </div>
@@ -138,15 +138,15 @@ export const Gallery: React.FC = () => {
                   sounds.bell();
                   setActiveCard(isSelected ? null : card.id);
                 }}
-                className={`cartoon-card bg-white rounded-3xl overflow-hidden cursor-pointer transition-all ${
-                  isSelected ? 'ring-4 ring-amber-400 scale-[1.02]' : ''
+                className={`cartoon-card bg-[#FFF9F0] rounded-3xl overflow-hidden cursor-pointer transition-all ${
+                  isSelected ? 'ring-3 ring-[#FF9F00] scale-[1.02]' : ''
                 }`}
               >
                 {/* Image Container with view mode logic */}
-                <div className="relative aspect-4/3 bg-amber-100 overflow-hidden border-b-3 border-amber-950">
+                <div className="relative aspect-4/3 bg-[#F7D9C7] overflow-hidden border-b-2 border-[#49200B]">
                   {viewMode === 'both' ? (
                     <div className="grid grid-cols-2 h-full w-full">
-                      <div className="relative h-full overflow-hidden border-r-2 border-amber-950">
+                      <div className="relative h-full overflow-hidden border-r-2 border-[#49200B]">
                         <img
                           src={card.realImage}
                           alt={`${card.title} real`}
@@ -162,7 +162,7 @@ export const Gallery: React.FC = () => {
                           alt={`${card.title} cartoon`}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
-                        <span className="absolute bottom-2 right-2 text-[10px] font-bold px-2 py-0.5 bg-amber-400 text-amber-950 border border-amber-950 rounded">
+                        <span className="absolute bottom-2 right-2 text-[10px] font-bold px-2 py-0.5 bg-[#FFD36A] text-[#49200B] border border-[#49200B] rounded">
                           Cartoon 🎨
                         </span>
                       </div>
@@ -182,28 +182,28 @@ export const Gallery: React.FC = () => {
                   )}
 
                   {/* Corner Heart */}
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 border-2 border-amber-950 flex items-center justify-center text-rose-500 shadow-[1px_1px_0px_#3d2314]">
-                    <Heart className="w-4 h-4 fill-rose-500" />
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#FFF9F0] border-2 border-[#49200B] flex items-center justify-center text-[#FF9F00] shadow-[1px_1px_0px_#49200B]">
+                    <Heart className="w-4 h-4 fill-[#FF9F00]" />
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-5">
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-xl font-bold font-cartoon text-amber-950">
+                    <h3 className="text-xl font-bold font-heading text-[#49200B]">
                       {card.title}
                     </h3>
-                    <span className="text-xs font-bold text-amber-700 bg-amber-100 border border-amber-950/40 px-2 py-0.5 rounded-lg">
+                    <span className="text-xs font-bold text-[#79513B] bg-[#F7D9C7] border border-[#49200B]/30 px-2 py-0.5 rounded-lg">
                       {card.subtitle}
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-amber-900/80 font-medium leading-relaxed mb-3">
+                  <p className="text-xs sm:text-sm text-[#79513B] font-medium leading-relaxed mb-3">
                     {card.description}
                   </p>
 
-                  <div className="p-3 bg-amber-50/80 border border-amber-950/30 rounded-xl text-xs text-amber-950 font-medium flex items-start gap-1.5">
-                    <span className="text-amber-600 font-bold">✨ Fun fact:</span>
+                  <div className="p-3 bg-white border border-[#49200B]/20 rounded-xl text-xs text-[#49200B] font-medium flex items-start gap-1.5">
+                    <span className="text-[#FF9F00] font-bold">✨ Fun fact:</span>
                     <span>{card.funFact}</span>
                   </div>
                 </div>

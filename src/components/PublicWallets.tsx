@@ -153,18 +153,18 @@ export const PublicWallets: React.FC = () => {
   };
 
   return (
-    <section id="wallets" className="py-16 md:py-24 bg-[#FFF9ED] border-b-3 border-amber-950/10 relative">
+    <section id="wallets" className="py-16 md:py-24 bg-[#FFF9F0] border-b border-[#49200B]/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-sky-200 border-2 border-amber-950 rounded-full text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#C6EAD7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
             <span>👁️ 100% On-Chain Visibility</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-cartoon text-amber-950 tracking-tight mb-3">
-            Public Wallets &amp; <span className="text-amber-500">Transparency</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+            Public Wallets &amp; <span className="text-[#FF9F00]">Transparency</span>
           </h2>
-          <p className="text-base sm:text-lg text-amber-900/80 font-medium leading-relaxed">
+          <p className="text-base sm:text-lg text-[#79513B] font-medium leading-relaxed">
             Every team and charity wallet, so you can check balances and transfers yourself. No hidden insider allocations.
           </p>
 
@@ -182,10 +182,10 @@ export const PublicWallets: React.FC = () => {
                   sounds.pop();
                   setFilter(t.id as typeof filter);
                 }}
-                className={`cartoon-btn px-3.5 py-1.5 text-xs sm:text-sm font-bold rounded-xl ${
+                className={`cartoon-btn px-3.5 py-1.5 text-xs sm:text-sm font-bold font-heading rounded-xl ${
                   filter === t.id
-                    ? 'bg-amber-400 text-amber-950 shadow-[2px_2px_0px_#3d2314]'
-                    : 'bg-white text-amber-900'
+                    ? 'bg-[#FFD36A] text-[#49200B] border-2 border-[#49200B] shadow-[2px_2px_0px_#49200B]'
+                    : 'bg-[#FFF9F0] text-[#79513B] border border-[#49200B]/30 hover:bg-[#F7D9C7]'
                 }`}
               >
                 {t.label}
@@ -202,19 +202,19 @@ export const PublicWallets: React.FC = () => {
             return (
               <div
                 key={w.id}
-                className="cartoon-card bg-white rounded-3xl p-5 flex flex-col justify-between"
+                className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div>
-                      <h3 className="font-cartoon font-bold text-base text-amber-950">
+                      <h3 className="font-heading font-bold text-base text-[#49200B]">
                         {w.name}
                       </h3>
-                      <div className="text-xs font-bold text-amber-700">
+                      <div className="text-xs font-bold text-[#FF9F00]">
                         {w.role}
                       </div>
                     </div>
-                    <span className="text-xs px-2 py-0.5 rounded-md border border-amber-950/40 bg-amber-50 font-bold text-amber-900 shrink-0">
+                    <span className="text-xs px-2 py-0.5 rounded-lg border border-[#49200B]/30 bg-white font-bold font-heading text-[#49200B] shrink-0">
                       {w.country}
                     </span>
                   </div>

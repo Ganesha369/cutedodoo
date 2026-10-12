@@ -60,18 +60,18 @@ export const HowToBuy: React.FC = () => {
   ];
 
   return (
-    <section id="buy" className="py-16 md:py-24 bg-[#FFF9ED] border-b-3 border-amber-950/10 relative">
+    <section id="buy" className="py-16 md:py-24 bg-[#FFF9F0] border-b border-[#49200B]/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-200 border-2 border-amber-950 rounded-full text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#FFD36A] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
             <span>🚀 Easy Guide</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-cartoon text-amber-950 tracking-tight mb-3">
-            Get <span className="text-amber-500">$DODO</span> in 4 Steps
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+            Get <span className="text-[#FF9F00]">$DODO</span> in 4 Steps
           </h2>
-          <p className="text-base sm:text-lg text-amber-900/80 font-medium">
+          <p className="text-base sm:text-lg text-[#79513B] font-medium">
             New to Solana? It takes about five minutes.
           </p>
         </div>
@@ -81,28 +81,28 @@ export const HowToBuy: React.FC = () => {
           {steps.map((st) => (
             <div
               key={st.step}
-              className="cartoon-card bg-white rounded-3xl p-6 relative flex flex-col justify-between"
+              className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 relative flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-amber-950 flex items-center justify-center font-cartoon font-extrabold text-xl text-amber-950 shadow-[2px_2px_0px_#3d2314]">
+                  <div className="w-10 h-10 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center font-heading font-extrabold text-xl text-[#49200B] shadow-[2px_2px_0px_#49200B]">
                     {st.step}
                   </div>
                   <span className="text-3xl">{st.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold font-cartoon text-amber-950 mb-2">
+                <h3 className="text-xl font-bold font-heading text-[#49200B] mb-2">
                   {st.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-amber-900/80 font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#79513B] font-medium leading-relaxed">
                   {st.description}
                 </p>
               </div>
 
               {st.step === '3' && (
-                <div className="mt-4 pt-3 border-t border-amber-950/10">
+                <div className="mt-4 pt-3 border-t border-[#49200B]/15">
                   <button
                     onClick={handleCopyCA}
-                    className="w-full cartoon-btn py-1.5 px-2 bg-amber-100 hover:bg-amber-200 text-xs font-bold text-amber-950 rounded-xl flex items-center justify-center gap-1.5"
+                    className="w-full cartoon-btn py-1.5 px-2 bg-white hover:bg-[#F7D9C7] text-xs font-bold font-heading text-[#49200B] rounded-xl flex items-center justify-center gap-1.5"
                   >
                     {copiedCA ? <Check className="w-3.5 h-3.5 text-emerald-700" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedCA ? 'CA Copied!' : 'Copy Verified CA'}</span>
@@ -115,27 +115,27 @@ export const HowToBuy: React.FC = () => {
 
         {/* Jupiter Swap Box Interface */}
         <div className="max-w-xl mx-auto">
-          <div className="cartoon-card bg-white rounded-3xl p-6 sm:p-8 shadow-[6px_8px_0px_#3d2314]">
+          <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 sm:p-8 shadow-[4px_5px_0px_#49200B]">
             
-            <div className="flex items-center justify-between pb-4 mb-4 border-b-2 border-amber-950/10">
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#49200B]/15">
               <div>
-                <h3 className="text-2xl font-bold font-cartoon text-amber-950">
+                <h3 className="text-2xl font-bold font-heading text-[#49200B]">
                   Swap SOL for $DODO
                 </h3>
-                <p className="text-xs text-amber-800 font-medium">
+                <p className="text-xs text-[#79513B] font-medium">
                   Powered by Jupiter aggregator &amp; pump.fun
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-xs font-bold text-amber-900 bg-amber-100 border border-amber-950/40 px-2.5 py-1 rounded-lg">
+                <span className="text-xs font-bold font-heading text-[#49200B] bg-[#FFD36A] border border-[#49200B] px-2.5 py-1 rounded-lg">
                   Slippage: {slippage}%
                 </span>
               </div>
             </div>
 
             {/* Input SOL */}
-            <div className="bg-amber-50 border-2 border-amber-950 rounded-2xl p-4 mb-3">
-              <div className="flex justify-between text-xs font-bold text-amber-800 mb-1">
+            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 mb-3">
+              <div className="flex justify-between text-xs font-bold font-heading text-[#79513B] mb-1">
                 <span>You Pay</span>
                 <span>Balance: {walletConnected ? '2.45 SOL' : '0.00 SOL'}</span>
               </div>
@@ -147,9 +147,9 @@ export const HowToBuy: React.FC = () => {
                   placeholder="0.0"
                   step="0.1"
                   min="0"
-                  className="bg-transparent text-2xl font-extrabold font-mono text-amber-950 focus:outline-none w-2/3"
+                  className="bg-transparent text-2xl font-extrabold font-mono text-[#49200B] focus:outline-none w-2/3"
                 />
-                <div className="flex items-center gap-1.5 bg-amber-200 border-2 border-amber-950 px-3 py-1.5 rounded-xl font-bold text-xs sm:text-sm text-amber-950 shadow-[1px_1px_0px_#3d2314]">
+                <div className="flex items-center gap-1.5 bg-[#FFD36A] border-2 border-[#49200B] px-3 py-1.5 rounded-xl font-bold font-heading text-xs sm:text-sm text-[#49200B] shadow-[1px_1px_0px_#49200B]">
                   <span>☀️ SOL</span>
                 </div>
               </div>
@@ -159,31 +159,31 @@ export const HowToBuy: React.FC = () => {
             <div className="flex justify-center -my-1 relative z-10">
               <button
                 onClick={() => sounds.pop()}
-                className="w-8 h-8 rounded-full bg-amber-300 border-2 border-amber-950 flex items-center justify-center text-amber-950 shadow-[1px_2px_0px_#3d2314] hover:rotate-180 transition-transform duration-300"
+                className="w-8 h-8 rounded-full bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-[#49200B] shadow-[1px_2px_0px_#49200B] hover:rotate-180 transition-transform duration-300"
               >
                 <ArrowDownUp className="w-4 h-4" />
               </button>
             </div>
 
             {/* Output $DODO */}
-            <div className="bg-amber-50 border-2 border-amber-950 rounded-2xl p-4 mb-4">
-              <div className="flex justify-between text-xs font-bold text-amber-800 mb-1">
+            <div className="bg-white border-2 border-[#49200B] rounded-2xl p-4 mb-4">
+              <div className="flex justify-between text-xs font-bold font-heading text-[#79513B] mb-1">
                 <span>You Receive (Estimated)</span>
                 <span>1% for stray dogs included</span>
               </div>
               <div className="flex items-center justify-between gap-2">
-                <div className="text-2xl font-extrabold font-mono text-amber-950 truncate w-2/3">
+                <div className="text-2xl font-extrabold font-mono text-[#49200B] truncate w-2/3">
                   {estimatedDodo}
                 </div>
-                <div className="flex items-center gap-1.5 bg-amber-400 border-2 border-amber-950 px-3 py-1.5 rounded-xl font-bold text-xs sm:text-sm text-amber-950 shadow-[1px_1px_0px_#3d2314]">
+                <div className="flex items-center gap-1.5 bg-[#FFD36A] border-2 border-[#49200B] px-3 py-1.5 rounded-xl font-bold font-heading text-xs sm:text-sm text-[#49200B] shadow-[1px_1px_0px_#49200B]">
                   <span>🐶 $DODO</span>
                 </div>
               </div>
             </div>
 
             {/* Slippage options */}
-            <div className="flex items-center justify-between gap-2 mb-6 text-xs font-bold text-amber-950">
-              <span className="text-amber-800">Slippage Tolerance:</span>
+            <div className="flex items-center justify-between gap-2 mb-6 text-xs font-bold font-heading text-[#49200B]">
+              <span className="text-[#79513B]">Slippage Tolerance:</span>
               <div className="flex gap-1.5">
                 {['0.5', '1.0', '2.0'].map((val) => (
                   <button
@@ -192,8 +192,8 @@ export const HowToBuy: React.FC = () => {
                       sounds.pop();
                       setSlippage(val);
                     }}
-                    className={`px-2.5 py-1 rounded-lg border-2 border-amber-950 transition-all ${
-                      slippage === val ? 'bg-amber-400 font-extrabold shadow-[1px_1px_0px_#3d2314]' : 'bg-white'
+                    className={`px-2.5 py-1 rounded-lg border-2 border-[#49200B] transition-all ${
+                      slippage === val ? 'bg-[#FFD36A] font-extrabold shadow-[1px_1px_0px_#49200B]' : 'bg-white'
                     }`}
                   >
                     {val}%
@@ -203,12 +203,12 @@ export const HowToBuy: React.FC = () => {
             </div>
 
             {/* Launch Banner / Status */}
-            <div className="p-4 bg-amber-100/90 border-2 border-amber-950 rounded-2xl text-center mb-6 shadow-[2px_2px_0px_#3d2314]">
+            <div className="p-4 bg-[#F7D9C7] border-2 border-[#49200B] rounded-2xl text-center mb-6 shadow-[2px_2px_0px_#49200B]">
               <div className="text-xl mb-1">🐶</div>
-              <h4 className="text-base font-bold font-cartoon text-amber-950 mb-1">
+              <h4 className="text-base font-bold font-heading text-[#49200B] mb-1">
                 $DODO is launching soon
               </h4>
-              <p className="text-xs text-amber-900/80 leading-relaxed font-medium">
+              <p className="text-xs text-[#79513B] leading-relaxed font-medium">
                 The swap box switches on automatically as soon as the token is live. Follow our channels so you don&apos;t miss the launch.
               </p>
             </div>
@@ -220,9 +220,9 @@ export const HowToBuy: React.FC = () => {
                   sounds.pop();
                   setShowWalletModal(true);
                 }}
-                className="cartoon-btn w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-amber-950 font-cartoon text-lg font-bold rounded-2xl flex items-center justify-center gap-2"
+                className="cartoon-btn w-full py-3.5 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] font-heading text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[3px_3px_0px_#49200B]"
               >
-                <Wallet className="w-5 h-5 text-amber-950" />
+                <Wallet className="w-5 h-5 text-[#49200B]" />
                 <span>Connect Solana Wallet</span>
               </button>
             ) : (
@@ -233,13 +233,13 @@ export const HowToBuy: React.FC = () => {
                     setSwapStatusMessage('Token launch pending! You are connected and ready to buy the moment trading opens on pump.fun! 🚀🐾');
                     setTimeout(() => setSwapStatusMessage(null), 5000);
                   }}
-                  className="cartoon-btn w-full py-3.5 bg-emerald-400 hover:bg-emerald-300 text-emerald-950 font-cartoon text-lg font-bold rounded-2xl flex items-center justify-center gap-2"
+                  className="cartoon-btn w-full py-3.5 bg-[#C6EAD7] hover:bg-[#b2e4c7] text-[#49200B] font-heading text-lg font-bold rounded-2xl flex items-center justify-center gap-2 border-2 border-[#49200B] shadow-[3px_3px_0px_#49200B]"
                 >
-                  <Sparkles className="w-5 h-5 text-emerald-950" />
+                  <Sparkles className="w-5 h-5 text-[#49200B]" />
                   <span>Ready to Swap (Connected: {connectedWalletName})</span>
                 </button>
                 {swapStatusMessage && (
-                  <div className="p-3 bg-emerald-100 border-2 border-emerald-800 rounded-xl text-xs font-bold text-emerald-950 text-center animate-bounce">
+                  <div className="p-3 bg-[#C6EAD7] border-2 border-[#49200B] rounded-xl text-xs font-bold font-heading text-[#49200B] text-center animate-bounce">
                     {swapStatusMessage}
                   </div>
                 )}
@@ -248,14 +248,14 @@ export const HowToBuy: React.FC = () => {
                     setWalletConnected(false);
                     setSwapStatusMessage(null);
                   }}
-                  className="w-full text-xs text-amber-800 underline text-center"
+                  className="w-full text-xs text-[#79513B] underline text-center font-heading"
                 >
                   Disconnect Wallet
                 </button>
               </div>
             )}
 
-            <p className="text-[11px] text-amber-800/80 text-center mt-4">
+            <p className="text-[11px] text-[#79513B] text-center mt-4 font-medium">
               Your wallet signs every trade; this website never holds your funds or keys.
             </p>
 
@@ -265,14 +265,14 @@ export const HowToBuy: React.FC = () => {
         {/* Wallet Connect Modal */}
         {showWalletModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs">
-            <div className="cartoon-card bg-white rounded-3xl p-6 max-w-sm w-full">
-              <div className="flex items-center justify-between pb-3 mb-4 border-b-2 border-amber-950/10">
-                <h4 className="text-xl font-bold font-cartoon text-amber-950">
+            <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 max-w-sm w-full border-2 border-[#49200B] shadow-[4px_5px_0px_#49200B]">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#49200B]/15">
+                <h4 className="text-xl font-bold font-heading text-[#49200B]">
                   Connect Solana Wallet
                 </h4>
                 <button
                   onClick={() => setShowWalletModal(false)}
-                  className="text-amber-950 font-bold p-1 hover:bg-amber-100 rounded-lg"
+                  className="text-[#49200B] font-bold p-1 hover:bg-[#F7D9C7] rounded-lg"
                 >
                   ✕
                 </button>
@@ -287,12 +287,12 @@ export const HowToBuy: React.FC = () => {
                   <button
                     key={w.name}
                     onClick={() => handleConnectWallet(w.name)}
-                    className="cartoon-btn w-full p-3 bg-amber-50 hover:bg-amber-100 rounded-2xl flex items-center gap-3 text-left"
+                    className="cartoon-btn w-full p-3 bg-white hover:bg-[#F7D9C7] border-2 border-[#49200B] rounded-2xl flex items-center gap-3 text-left shadow-[2px_2px_0px_#49200B]"
                   >
                     <span className="text-2xl">{w.icon}</span>
                     <div>
-                      <div className="text-sm font-bold text-amber-950">{w.name}</div>
-                      <div className="text-[11px] text-amber-800">{w.desc}</div>
+                      <div className="text-sm font-bold font-heading text-[#49200B]">{w.name}</div>
+                      <div className="text-[11px] text-[#79513B]">{w.desc}</div>
                     </div>
                   </button>
                 ))}

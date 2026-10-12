@@ -102,30 +102,30 @@ export const CharityMilestones: React.FC = () => {
   ];
 
   return (
-    <section id="charity" className="py-16 md:py-24 bg-[#FFFDF7] relative">
+    <section id="charity" className="py-16 md:py-24 bg-[#FFF9F0] border-b border-[#49200B]/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-200 border-2 border-amber-950 rounded-full text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#F7D9C7] border border-[#49200B]/30 rounded-xl text-xs font-bold font-heading text-[#49200B] shadow-[1.5px_1.5px_0px_#49200B] mb-3">
             <span>🐾 Paws for a Cause</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-cartoon text-amber-950 tracking-tight mb-3">
-            Real Milestones. Real Donations. <span className="text-amber-500">Real Receipts.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#49200B] tracking-tight mb-3">
+            Real Milestones. Real Donations. <span className="text-[#FF9F00]">Real Receipts.</span>
           </h2>
-          <p className="text-base sm:text-lg text-amber-900/80 font-medium leading-relaxed">
-            Where every milestone feeds a stray. <strong>1% of the supply sits in a public charity wallet</strong>. As $DODO grows, donations go out at these market-cap goals, and every one is posted here with its Solscan link and photos.
+          <p className="text-base sm:text-lg text-[#79513B] font-medium leading-relaxed">
+            Where every milestone feeds a stray. <strong className="text-[#49200B]">1% of the supply sits in a public charity wallet</strong>. As $DODO grows, donations go out at these market-cap goals, and every one is posted here with its Solscan link and photos.
           </p>
 
           {/* Official Public Charity Donation Address Box */}
-          <div className="mt-6 inline-flex flex-col sm:flex-row items-center gap-2 bg-amber-100 border-2 border-amber-950 p-2.5 sm:px-4 sm:py-2 rounded-2xl shadow-[3px_3px_0px_#3d2314] max-w-xl mx-auto">
-            <span className="text-xs font-bold text-amber-900 shrink-0">Official Charity Wallet:</span>
-            <span className="font-mono text-xs font-bold text-amber-950 bg-white border border-amber-950/40 px-2.5 py-1 rounded-lg truncate max-w-[240px] sm:max-w-[280px]">
+          <div className="mt-6 inline-flex flex-col sm:flex-row items-center gap-2 bg-[#FFF9F0] border-2 border-[#49200B] p-2.5 sm:px-4 sm:py-2 rounded-2xl shadow-[2.5px_2.5px_0px_#49200B] max-w-xl mx-auto">
+            <span className="text-xs font-bold font-heading text-[#79513B] shrink-0">Official Charity Wallet:</span>
+            <span className="font-mono text-xs font-bold text-[#49200B] bg-white border border-[#49200B]/30 px-2.5 py-1 rounded-lg truncate max-w-[240px] sm:max-w-[280px]">
               {donationWallet}
             </span>
             <button
               onClick={copyDonationWallet}
-              className="cartoon-btn px-3 py-1 bg-amber-400 hover:bg-amber-300 text-amber-950 text-xs font-bold rounded-xl flex items-center gap-1 shrink-0"
+              className="cartoon-btn px-3 py-1 bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B] text-xs font-bold font-heading rounded-xl flex items-center gap-1 shrink-0"
             >
               {copiedDonation ? 'Copied ✓' : 'Copy'}
             </button>
@@ -134,36 +134,36 @@ export const CharityMilestones: React.FC = () => {
 
         {/* Milestone Timeline Cards */}
         <div className="space-y-4 mb-16 max-w-4xl mx-auto">
-          {milestones.map((m, idx) => (
+          {milestones.map((m) => (
             <div
               key={m.target}
-              className="cartoon-card bg-white rounded-3xl p-5 sm:p-6 transition-all hover:bg-amber-50/50"
+              className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 sm:p-6 transition-all hover:bg-[#F7D9C7]/30"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-start sm:items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-amber-200 border-2 border-amber-950 flex flex-col items-center justify-center shrink-0 shadow-[2px_2px_0px_#3d2314]">
+                  <div className="w-14 h-14 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex flex-col items-center justify-center shrink-0 shadow-[2px_2px_0px_#49200B]">
                     <span className="text-xl">{m.icon}</span>
-                    <span className="text-[11px] font-bold font-cartoon text-amber-950 mt-0.5">{m.target}</span>
+                    <span className="text-[11px] font-bold font-heading text-[#49200B] mt-0.5">{m.target}</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold font-cartoon text-amber-950">
+                    <h3 className="text-xl font-bold font-heading text-[#49200B]">
                       {m.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-amber-900/80 font-medium mt-1">
+                    <p className="text-xs sm:text-sm text-[#79513B] font-medium mt-1">
                       {m.desc}
                     </p>
-                    <div className="mt-2 text-xs font-semibold text-amber-700 flex items-center gap-1.5">
-                      <Camera className="w-3.5 h-3.5 text-amber-600" />
+                    <div className="mt-2 text-xs font-semibold text-[#FF9F00] flex items-center gap-1.5">
+                      <Camera className="w-3.5 h-3.5 text-[#FF9F00]" />
                       <span>{m.proof}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="shrink-0 self-end sm:self-center">
-                  <span className={`text-xs font-bold px-3 py-1.5 rounded-xl border-2 border-amber-950 shadow-[1px_1px_0px_#3d2314] ${
+                  <span className={`text-xs font-bold font-heading px-3 py-1.5 rounded-xl border-2 border-[#49200B] shadow-[1px_1px_0px_#49200B] ${
                     m.status === 'Ready'
-                      ? 'bg-emerald-300 text-emerald-950'
-                      : 'bg-amber-100 text-amber-900'
+                      ? 'bg-[#C6EAD7] text-[#49200B]'
+                      : 'bg-[#FFF9F0] text-[#79513B]'
                   }`}>
                     {m.status}
                   </span>
@@ -174,23 +174,23 @@ export const CharityMilestones: React.FC = () => {
         </div>
 
         {/* Notice on bonding curve */}
-        <p className="text-xs text-center text-amber-800/80 max-w-2xl mx-auto mb-16 font-medium">
+        <p className="text-xs text-center text-[#79513B] max-w-2xl mx-auto mb-16 font-medium">
           Market-cap milestones are goals, not promises. The pump.fun bonding curve completes at around a $69k market cap, after which $DODO trades on a Solana DEX.
         </p>
 
         {/* Interactive Holder Shelter Voting Box */}
-        <div className="cartoon-card bg-[#FFFDF0] rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-amber-950/10">
+        <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[#49200B]/15">
             <div>
-              <h3 className="text-2xl font-bold font-cartoon text-amber-950 flex items-center gap-2">
-                <Vote className="w-6 h-6 text-amber-600" />
+              <h3 className="text-2xl font-bold font-heading text-[#49200B] flex items-center gap-2">
+                <Vote className="w-6 h-6 text-[#FF9F00]" />
                 <span>Community Shelter Voting Poll</span>
               </h3>
-              <p className="text-xs sm:text-sm text-amber-800 font-medium">
+              <p className="text-xs sm:text-sm text-[#79513B] font-medium">
                 Holders vote on which recognized shelter receives the next grant allocation!
               </p>
             </div>
-            <div className="text-xs font-bold text-amber-950 bg-amber-200 border-2 border-amber-950 px-3 py-1.5 rounded-xl shadow-[2px_2px_0px_#3d2314]">
+            <div className="text-xs font-bold font-heading text-[#49200B] bg-[#FFD36A] border-2 border-[#49200B] px-3 py-1.5 rounded-xl shadow-[2px_2px_0px_#49200B]">
               Total Votes: {totalVotes}
             </div>
           </div>
@@ -228,30 +228,30 @@ export const CharityMilestones: React.FC = () => {
               return (
                 <div
                   key={shelter.id}
-                  className="bg-white border-2 border-amber-950 rounded-2xl p-4 shadow-[2px_2px_0px_#3d2314] flex flex-col justify-between"
+                  className="bg-white border-2 border-[#49200B] rounded-2xl p-4 shadow-[2px_2px_0px_#49200B] flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex justify-between items-start gap-2 mb-1">
-                      <h4 className="font-cartoon font-bold text-base text-amber-950">
+                      <h4 className="font-heading font-bold text-base text-[#49200B]">
                         {shelter.name}
                       </h4>
-                      <span className="text-xs font-bold font-mono text-amber-800 shrink-0">
+                      <span className="text-xs font-bold font-mono text-[#79513B] shrink-0">
                         {percentage}%
                       </span>
                     </div>
-                    <div className="text-[11px] font-semibold text-amber-700 mb-2">
+                    <div className="text-[11px] font-semibold text-[#FF9F00] mb-2">
                       📍 {shelter.location}
                     </div>
-                    <p className="text-xs text-amber-900/80 mb-3">
+                    <p className="text-xs text-[#79513B] mb-3 font-medium">
                       {shelter.mission}
                     </p>
                   </div>
 
                   <div>
                     {/* Vote progress bar */}
-                    <div className="w-full h-3 bg-amber-100 rounded-full border border-amber-950 overflow-hidden mb-3">
+                    <div className="w-full h-3 bg-[#FFF9F0] rounded-full border border-[#49200B] overflow-hidden mb-3">
                       <div
-                        className="h-full bg-amber-400 rounded-full transition-all duration-300"
+                        className="h-full bg-[#FFD36A] rounded-full transition-all duration-300"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -259,10 +259,10 @@ export const CharityMilestones: React.FC = () => {
                     <button
                       disabled={hasVoted}
                       onClick={() => castVote(shelter.id)}
-                      className={`w-full py-2 rounded-xl text-xs font-bold border-2 border-amber-950 transition-all ${
+                      className={`w-full py-2 rounded-xl text-xs font-bold font-heading border-2 border-[#49200B] transition-all ${
                         hasVoted
-                          ? 'bg-amber-100 text-amber-700 opacity-80 cursor-default'
-                          : 'cartoon-btn bg-amber-300 hover:bg-amber-200 text-amber-950'
+                          ? 'bg-[#F7D9C7] text-[#79513B] opacity-80 cursor-default'
+                          : 'cartoon-btn bg-[#FFD36A] hover:bg-[#ffc947] text-[#49200B]'
                       }`}
                     >
                       {hasVoted ? 'Vote Recorded ✓' : 'Vote For This Shelter 🐾'}
