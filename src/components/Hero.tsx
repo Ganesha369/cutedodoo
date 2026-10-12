@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             >
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-amber-950 bg-amber-200 shadow-[8px_10px_0px_#3d2314] group-hover:scale-102 transition-all">
                 <img
-                  src="/src/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
+                  src="/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
                   alt="CuteDODO mascot"
                   className="w-full h-full object-cover"
                 />

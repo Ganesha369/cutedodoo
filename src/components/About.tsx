@@ -64,7 +64,7 @@ export const About: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl overflow-hidden border-3 border-amber-950 shadow-[6px_6px_0px_#3d2314] bg-amber-100">
                 <img
-                  src="/src/assets/images/cutedodo_saving_strays_1791659633565.jpg"
+                  src="/assets/images/cutedodo_saving_strays_1791659633565.jpg"
                   alt="CuteDODO sharing food and clean water with street puppies"
                   className="w-full h-auto object-cover"
                 />

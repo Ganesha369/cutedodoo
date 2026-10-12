@@ -169,7 +169,7 @@ export const RailwayStationScene: React.FC<RailwayStationSceneProps> = ({ classN
           {/* Layer 1: High-res Japanese Station Backdrop Photo with golden twilight */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/src/assets/images/japanese_station_backdrop_1791705065925.jpg"
+              src="/assets/images/japanese_station_backdrop_1791705065925.jpg"
               alt="Japanese train station platform at golden hour"
               className="w-full h-full object-cover object-bottom"
               loading="eager"

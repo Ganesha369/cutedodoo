@@ -92,7 +92,7 @@ export const Playroom: React.FC = () => {
 
                 <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden border-3 border-amber-950 bg-amber-300 shadow-[4px_4px_0px_#3d2314]">
                   <img
-                    src="/src/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
+                    src="/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
                     alt="CuteDodo mascot happy"
                     className="w-full h-full object-cover animate-float"
                   />
@@ -171,7 +171,7 @@ export const Playroom: React.FC = () => {
               {/* Meme Preview Container */}
               <div className="relative aspect-square w-full max-w-xs mx-auto rounded-3xl overflow-hidden border-3 border-amber-950 bg-amber-200 shadow-[4px_4px_0px_#3d2314] mb-4">
                 <img
-                  src="/src/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
+                  src="/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
                   alt="Dodo meme base"
                   className="w-full h-full object-cover"
                 />

@@ -69,7 +69,7 @@ export const Tokenomics: React.FC = () => {
             <div className="cartoon-card bg-amber-100/70 rounded-3xl p-6 w-full max-w-sm text-center">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto mb-4 rounded-3xl overflow-hidden border-3 border-amber-950 shadow-[4px_4px_0px_#3d2314] bg-amber-300 animate-float">
                 <img
-                  src="/src/assets/images/cutedodo_coin_badge_1791659647166.jpg"
+                  src="/assets/images/cutedodo_coin_badge_1791659647166.jpg"
                   alt="3D CuteDodo Coin Badge"
                   className="w-full h-full object-cover"
                 />

@@ -21,8 +21,8 @@ export const Gallery: React.FC = () => {
       id: 'royal',
       title: 'His Highness Dodo',
       subtitle: 'Royal silk & peacock crown',
-      realImage: '/src/assets/images/cutedodo_royal_costume_1791659611900.jpg',
-      cartoonImage: '/src/assets/images/cutedodo_royal_costume_1791659611900.jpg',
+      realImage: '/assets/images/cutedodo_royal_costume_1791659611900.jpg',
+      cartoonImage: '/assets/images/cutedodo_royal_costume_1791659611900.jpg',
       description: 'Dressed up like royalty on festive days in Tamil Nadu! He sat so patiently while everyone took photos of his regal posture.',
       funFact: 'Grandma made him a miniature velvet cushion to sit on like a little Maharaja!'
     },
@@ -30,8 +30,8 @@ export const Gallery: React.FC = () => {
       id: 'beach',
       title: 'The Fashion Icon',
       subtitle: 'Blue silk scarf & beach chilling',
-      realImage: '/src/assets/images/dodo_beach_photo_1791659728175.jpg',
-      cartoonImage: '/src/assets/images/cutedodo_beach_fun_1791659622316.jpg',
+      realImage: '/assets/images/dodo_beach_photo_1791659728175.jpg',
+      cartoonImage: '/assets/images/cutedodo_beach_fun_1791659622316.jpg',
       description: 'Relaxing by the waves on Chennai beach on his favorite blue patterned mat, looking back with a happy open-mouth smile.',
       funFact: 'He loves barking at the gentle incoming foam and digging little sand paws!'
     },
@@ -39,8 +39,8 @@ export const Gallery: React.FC = () => {
       id: 'relaxing',
       title: 'Professional Napper',
       subtitle: 'Chill is a lifestyle',
-      realImage: '/src/assets/images/dodo_lawn_grass_1791659704495.jpg',
-      cartoonImage: '/src/assets/images/cutedodo_hero_mascot_1791659602047.jpg',
+      realImage: '/assets/images/dodo_lawn_grass_1791659704495.jpg',
+      cartoonImage: '/assets/images/cutedodo_hero_mascot_1791659602047.jpg',
       description: 'Lying relaxed on green lawn grass after a fun sprint. The ultimate master of stretching his legs and soaking in sunshine.',
       funFact: 'Can fall asleep within 30 seconds if you gently stroke between his brown fluffy ears.'
     },
@@ -48,8 +48,8 @@ export const Gallery: React.FC = () => {
       id: 'bone',
       title: 'Bone Connoisseur',
       subtitle: 'Never lets go of his chew treat',
-      realImage: '/src/assets/images/dodo_bone_bed_1791659717865.jpg',
-      cartoonImage: '/src/assets/images/cutedodo_hero_mascot_1791659602047.jpg',
+      realImage: '/assets/images/dodo_bone_bed_1791659717865.jpg',
+      cartoonImage: '/assets/images/cutedodo_hero_mascot_1791659602047.jpg',
       description: 'Sitting on the bed with his prized bone held firmly in his mouth and his signature golden collar bell.',
       funFact: 'He will proudly carry this bone to show every single person entering the house!'
     },
@@ -57,8 +57,8 @@ export const Gallery: React.FC = () => {
       id: 'flag',
       title: 'Proud Chennai Boy',
       subtitle: 'Bow tie & tricolour',
-      realImage: '/src/assets/images/dodo_bowtie_flag_1791659739239.jpg',
-      cartoonImage: '/src/assets/images/cutedodo_coin_badge_1791659647166.jpg',
+      realImage: '/assets/images/dodo_bowtie_flag_1791659739239.jpg',
+      cartoonImage: '/assets/images/cutedodo_coin_badge_1791659647166.jpg',
       description: 'Wearing a handsome bow tie standing beside the tricolour ribbon, proud of his Tamil Nadu roots and community love.',
       funFact: 'The entire neighborhood knows him by name and waves when he goes on his evening walk.'
     }
