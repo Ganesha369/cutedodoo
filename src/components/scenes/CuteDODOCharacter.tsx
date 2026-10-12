@@ -391,6 +391,3 @@ export const CuteDODOCharacter: React.FC<CuteDODOCharacterProps> = ({
     </div>
   );
 };
-
-export const ShihTzuCharacter = CuteDODOCharacter;
-export type ShihTzuCharacterProps = CuteDODOCharacterProps;

@@ -14,6 +14,7 @@ import { Roadmap } from './components/Roadmap';
 import { Community } from './components/Community';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
+import { InteractiveMouseTrail } from './components/InteractiveMouseTrail';
 import { sounds } from './utils/soundEffects';
 import { Sparkles, Heart } from 'lucide-react';
 
@@ -174,6 +175,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Interactive Mouse Pointer Trail & Cartoon Click Ripples across the landing page */}
+      <InteractiveMouseTrail />
 
       {/* Floating Interactive Dodo Quick Action Button */}
       <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2">

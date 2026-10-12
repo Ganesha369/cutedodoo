@@ -52,6 +52,64 @@
   transform-origin: bottom center;
 }
 
+@keyframes tailWagFast {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-22deg);
+  }
+  75% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes tailWagNormal {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-12deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-tail-fast {
+  animation: tailWagFast 0.35s ease-in-out infinite;
+}
+
+.animate-tail {
+  animation: tailWagNormal 0.8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 6s linear infinite;
+}
+
 /* Playful cartoon card styling with thick friendly outline and offset drop shadow */
 .cartoon-card {
   border: 3px solid #3d2314;

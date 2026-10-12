@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CuteDODOCharacter, DogAnimationState } from './ShihTzuCharacter';
+import { CuteDODOCharacter, DogAnimationState } from './CuteDODOCharacter';
 import { sounds } from '../../utils/soundEffects';
 import { Footprints, Pause, Play, Sparkles } from 'lucide-react';
 

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Copy, Check, ExternalLink, ArrowRight, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Copy, Check, ExternalLink, ArrowRight, ShieldCheck, Heart, Sparkles, MousePointer } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { HeroPointerPlayground } from './HeroPointerPlayground';
 
 interface HeroProps {
   onOpenBuyModal?: () => void;
@@ -11,6 +12,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   const [liveMode, setLiveMode] = useState(false);
   const [mascotMood, setMascotMood] = useState<'happy' | 'barking' | 'eating'>('happy');
   const [speechBubbleText, setSpeechBubbleText] = useState('Woof! Welcome to my pack! 🐾');
+
+  // Mouse parallax tilt state for Hero Mascot Card
+  const [mascotTilt, setMascotTilt] = useState({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
+  const mascotCardRef = useRef<HTMLDivElement>(null);
+
+  const handleMascotMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!mascotCardRef.current) return;
+    const rect = mascotCardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rx = ((y - centerY) / centerY) * -12; // tilt X
+    const ry = ((x - centerX) / centerX) * 12;  // tilt Y
+    const glowX = (x / rect.width) * 100;
+    const glowY = (y / rect.height) * 100;
+    setMascotTilt({ rx, ry, glowX, glowY });
+  };
+
+  const handleMascotMouseLeave = () => {
+    setMascotTilt({ rx: 0, ry: 0, glowX: 50, glowY: 50 });
+  };
 
   const contractAddress = 'Coming soon';
 
@@ -179,34 +202,51 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-3 border-b-3 border-amber-950 rotate-45"></div>
             </div>
 
-            {/* Mascot Character Avatar */}
+            {/* Mascot Character Avatar with Interactive Mouse 3D Parallax */}
             <div
+              ref={mascotCardRef}
+              onMouseMove={handleMascotMouseMove}
+              onMouseLeave={handleMascotMouseLeave}
               onClick={handleMascotClick}
               className="relative cursor-pointer group select-none"
-              title="Click me to hear Dodo bark and get a happy thought!"
+              title="Click me to hear Dodo bark and move mouse to tilt in 3D!"
+              style={{ perspective: 900 }}
             >
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-amber-950 bg-amber-200 shadow-[8px_10px_0px_#3d2314] group-hover:scale-102 transition-all">
+              <div
+                className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-amber-950 bg-amber-200 shadow-[8px_10px_0px_#3d2314] transition-transform duration-100 ease-out will-change-transform"
+                style={{
+                  transform: `rotateX(${mascotTilt.rx}deg) rotateY(${mascotTilt.ry}deg)`,
+                }}
+              >
                 <img
                   src="/assets/images/cutedodo_hero_mascot_1791659602047.jpg"
                   alt="CuteDODO mascot"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                {/* Interactive Dynamic Mouse Light Sheen */}
+                <div
+                  className="absolute inset-0 pointer-events-none opacity-40 mix-blend-overlay transition-opacity duration-150"
+                  style={{
+                    background: `radial-gradient(circle 180px at ${mascotTilt.glowX}% ${mascotTilt.glowY}%, rgba(255,255,255,0.8), transparent 70%)`,
+                  }}
                 />
                 
                 {/* Floating collar bell overlay badge */}
-                <div className="absolute bottom-3 right-3 bg-amber-400 border-2 border-amber-950 rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold shadow-[2px_2px_0px_#3d2314]">
+                <div className="absolute bottom-3 right-3 bg-amber-400 border-2 border-amber-950 rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold shadow-[2px_2px_0px_#3d2314] z-10">
                   <span>🔔 Golden Bell</span>
                 </div>
 
                 {/* Chennai stamp */}
-                <div className="absolute top-3 left-3 bg-white/95 border-2 border-amber-950 rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314]">
+                <div className="absolute top-3 left-3 bg-white/95 border-2 border-amber-950 rounded-xl px-2.5 py-1 flex items-center gap-1 text-xs font-bold text-amber-950 shadow-[2px_2px_0px_#3d2314] z-10">
                   <span>🇮🇳 Chennai, TN</span>
                 </div>
               </div>
 
-              {/* Tap prompt */}
-              <div className="mt-3 text-center">
-                <span className="inline-block text-xs font-bold text-amber-800 bg-amber-200/90 border border-amber-950 px-3 py-1 rounded-full shadow-[1px_1px_0px_#3d2314]">
-                  👆 Tap CuteDoDo to hear him bark!
+              {/* Tap & Mouse prompt */}
+              <div className="mt-3 text-center flex flex-col items-center gap-1">
+                <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-800 bg-amber-200/90 border border-amber-950 px-3 py-1 rounded-full shadow-[1px_1px_0px_#3d2314]">
+                  👆 Click to Bark · 🖱️ Move Mouse to Tilt 3D
                 </span>
               </div>
             </div>
@@ -214,6 +254,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
 
         </div>
+
+        {/* Dedicated Interactive Mouse Playground on Landing Page */}
+        <HeroPointerPlayground />
 
         {/* Live Market Data Card Strip */}
         <div className="cartoon-card bg-amber-50 rounded-3xl p-5 sm:p-6 mb-16">
@@ -283,11 +326,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
         </div>
 
-        {/* 4 Pillars Grid (Requested feature cards) */}
+        {/* 4 Pillars Grid (Requested feature cards with interactive mouse hover lift) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5">
-            <div className="w-12 h-12 rounded-2xl bg-amber-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314]">
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5 hover:-translate-y-1.5 hover:shadow-[6px_7px_0px_#3d2314] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-amber-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314] group-hover:scale-110 group-hover:rotate-6 transition-transform">
               0%
             </div>
             <h3 className="text-lg font-bold font-cartoon text-amber-950 mb-1.5">
@@ -298,8 +344,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5">
-            <div className="w-12 h-12 rounded-2xl bg-sky-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314]">
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5 hover:-translate-y-1.5 hover:shadow-[6px_7px_0px_#3d2314] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-sky-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314] group-hover:scale-110 group-hover:-rotate-6 transition-transform">
               👁️
             </div>
             <h3 className="text-lg font-bold font-cartoon text-amber-950 mb-1.5">
@@ -310,8 +359,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5">
-            <div className="w-12 h-12 rounded-2xl bg-rose-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314]">
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5 hover:-translate-y-1.5 hover:shadow-[6px_7px_0px_#3d2314] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-rose-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314] group-hover:scale-110 group-hover:rotate-6 transition-transform">
               1%
             </div>
             <h3 className="text-lg font-bold font-cartoon text-amber-950 mb-1.5">
@@ -322,8 +374,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314]">
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#FFFDF0] rounded-3xl p-5 hover:-translate-y-1.5 hover:shadow-[6px_7px_0px_#3d2314] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-emerald-300 border-2 border-amber-950 flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#3d2314] group-hover:scale-110 group-hover:-rotate-6 transition-transform">
               0%
             </div>
             <h3 className="text-lg font-bold font-cartoon text-amber-950 mb-1.5">
