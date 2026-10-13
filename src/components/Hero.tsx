@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
     playsInline
     className="w-full h-full object-cover"
   >
-    <source src="/dodo.mp4" type="video/mp4" />
+    <source src="/assets/videos/dodo.mp4" type="video/mp4" />
   </video>
 </div>
 
