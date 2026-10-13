@@ -63,7 +63,40 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   };
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-[#FFF9F0] border-b border-[#49200B]/10">
+    <section className="relative isolate overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-[#FFF9F0] border-b border-[#49200B]/10"> 
+
+{/* Background video - controlled size */}
+<div className="absolute top-0 right-0 w-[1550px] h-[840px] overflow-hidden rounded-2xl z-0">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover"
+  >
+    <source src="/dodo.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  
+
+{/* White gradient for text readability */}
+<div
+  className="pointer-events-none absolute inset-0 z-[1]
+    bg-gradient-to-r
+    from-[#FFF9F0]/95
+    via-[#FFF9F0]/75
+    to-transparent
+    lg:from-[#FFF9F0]/95
+    lg:via-[#FFF9F0]/30
+    lg:to-transparent"
+/>
+
+
+
+
+    
+
       {/* Whimsical storybook background decorative elements */}
       <div className="absolute top-6 left-6 text-3xl opacity-25 select-none animate-bounce" aria-hidden="true">🦴</div>
       <div className="absolute top-20 right-12 text-2xl text-[#FF9F00] opacity-35 select-none animate-pulse" aria-hidden="true">🐾</div>
