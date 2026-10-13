@@ -4,6 +4,7 @@ import { sounds } from '../utils/soundEffects';
 import { IndianRailScene } from './IndianRailScene';
 import { GardenFamilyPlayScene } from './GardenFamilyPlayScene';
 import { CartoonDogWalkMarquee } from './CartoonDogWalkMarquee';
+import { MarqueeBanner } from './MarqueeBanner';
 
 interface HeroProps {
   onOpenBuyModal?: () => void;
@@ -63,49 +64,47 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
   };
 
   return (
-    <section className="relative isolate overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 bg-[#FFF9F0] border-b border-[#49200B]/10"> 
+    <section className="relative isolate overflow-hidden bg-[#FFF9F0] border-b border-[#49200B]/10"> 
 
-{/* Background video - controlled size */}
-<div className="absolute top-0 right-0 w-[1550px] h-[840px] overflow-hidden rounded-2xl z-0">
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover"
-  >
-    <source src="/assets/videos/dodo.mp4" type="video/mp4" />
-  </video>
-</div>
+      {/* (1) Top Div: from top h-[840px], containing the background video and hero content */}
+      <div id="hero-top" className="relative w-full min-h-[840px] lg:h-[840px] overflow-hidden flex flex-col justify-center pt-8 pb-10 md:pt-12 md:pb-12 bg-[#FFF9F0]">
 
-  
+        {/* Background video - inside (1) top div, fully mobile responsive across all screens */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center md:object-right opacity-30 sm:opacity-40 lg:opacity-100 transition-opacity"
+          >
+            <source src="/assets/videos/dodo.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-{/* White gradient for text readability */}
-<div
-  className="pointer-events-none absolute inset-0 z-[1]
-    bg-gradient-to-r
-    from-[#FFF9F0]/95
-    via-[#FFF9F0]/75
-    to-transparent
-    lg:from-[#FFF9F0]/95
-    lg:via-[#FFF9F0]/30
-    lg:to-transparent"
-/>
+        {/* Gradient overlay for crystal-clear text readability on mobile & desktop */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[1]
+            bg-gradient-to-b
+            from-[#FFF9F0]/95
+            via-[#FFF9F0]/85
+            to-[#FFF9F0]
+            lg:bg-gradient-to-r
+            lg:from-[#FFF9F0]/95
+            lg:via-[#FFF9F0]/0
+            lg:to-transparent"
+        />
 
+        {/* Whimsical storybook background decorative elements */}
+        <div className="absolute top-6 left-6 text-3xl opacity-25 select-none animate-bounce" aria-hidden="true">🦴</div>
+        <div className="absolute top-20 right-12 text-2xl text-[#FF9F00] opacity-35 select-none animate-pulse" aria-hidden="true">🐾</div>
+        <div className="absolute bottom-16 left-1/4 text-3xl opacity-20 select-none" aria-hidden="true">✨</div>
+        <div className="absolute top-1/2 right-6 text-3xl opacity-20 select-none" aria-hidden="true">🥣</div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F7D9C7]/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-1/3 -left-20 w-80 h-80 bg-[#FFD36A]/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-
-
-    
-
-      {/* Whimsical storybook background decorative elements */}
-      <div className="absolute top-6 left-6 text-3xl opacity-25 select-none animate-bounce" aria-hidden="true">🦴</div>
-      <div className="absolute top-20 right-12 text-2xl text-[#FF9F00] opacity-35 select-none animate-pulse" aria-hidden="true">🐾</div>
-      <div className="absolute bottom-16 left-1/4 text-3xl opacity-20 select-none" aria-hidden="true">✨</div>
-      <div className="absolute top-1/2 right-6 text-3xl opacity-20 select-none" aria-hidden="true">🥣</div>
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F7D9C7]/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-1/3 -left-20 w-80 h-80 bg-[#FFD36A]/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Hero Content Container (Fully responsive on mobile, tablet, and desktop) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
         
         {/* Top Tagline / Mission Kickers */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-4 text-xs sm:text-sm font-bold font-heading text-[#49200B]">
@@ -320,6 +319,29 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
 
         </div>
+        </div>
+      </div>
+      {/* End of (1) Top Div */}
+
+      {/* Marquee effect where the div is separated */}
+      <MarqueeBanner
+        variant="chocolate"
+        speed="normal"
+        direction="rtl"
+        icon="🐾"
+        customMessages={[
+          "ADOPT KINDNESS",
+          "LOVE YOUR FOUR-LEGGED FRIENDS",
+          "1% DEDICATED TO PET SHELTERS",
+          "PROUD FAMILY MOVEMENT ON SOLANA",
+          "EVERY PAW DESERVES LOVE",
+          "100% TRANSPARENT FAMILY WALLETS",
+        ]}
+      />
+
+      {/* (2) Remaining Div: Railway scene, cartoon dog parade, garden scene, live market data, 4 pillars */}
+      <div id="hero-remaining" className="relative w-full py-12 md:py-16 bg-[#FFF9F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
         {/* Indian Railway Station Scene with Moving Express Train (Chennai Central) */}
         <div className="mb-6">
@@ -424,65 +446,69 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
         </div>
 
-        {/* 4 Pillars Grid (Cohesive warm card design system) */}
+        {/* 4 Pillars Grid (Bold vibrant cartoon card design with high-contrast readable text) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
+          {/* Pillar 1: Marketing Tokens (Bold Sunset Orange) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#EA580C] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#EA580C] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Marketing tokens
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-orange-100 leading-relaxed font-semibold">
               Ads, trending and listings are paid in SOL from our own pocket. We never sell $DODO to pay for ads.
             </p>
           </div>
 
+          {/* Pillar 2: Every Team Wallet Public (Bold Emerald Green) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#059669] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               👁️
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Every team wallet public
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-semibold">
               Each Guardian, dev and charity wallet is listed with its Solscan link, so you can watch every move.
             </p>
           </div>
 
+          {/* Pillar 3: For Pet Shelters (Bold Ruby Coral) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#E11D48] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#E11D48] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               1%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               For pet shelters
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-rose-100 leading-relaxed font-semibold">
               A public charity wallet. Holders vote on the shelters, and every donation is posted with proof.
             </p>
           </div>
 
+          {/* Pillar 4: Buy & Sell Tax (Bold Royal Solana Indigo) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#4F46E5] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#4F46E5] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Buy &amp; sell tax
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-indigo-100 leading-relaxed font-semibold">
               A standard Solana token. Mint and freeze authority are revoked at launch.
             </p>
           </div>
@@ -500,7 +526,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </a>
         </div>
 
+        </div>
       </div>
+      {/* End of (2) Remaining Div */}
     </section>
   );
 };
