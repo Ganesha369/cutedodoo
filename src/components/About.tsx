@@ -78,53 +78,69 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Feature Cards */}
+        {/* 4 Feature Cards (Bold vibrant colors with high-contrast readable text) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B]">
-              <Scale className="w-6 h-6 text-[#49200B]" />
+          {/* Card 1: Open Launch (Bold Sunset Orange) */}
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#EA580C] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Scale className="w-6 h-6 text-[#EA580C]" />
             </div>
-            <h3 className="text-xl font-bold font-heading text-[#49200B] mb-2">
+            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Open Launch
             </h3>
-            <p className="text-sm text-[#79513B] font-medium leading-relaxed">
+            <p className="text-sm text-orange-100 font-semibold leading-relaxed">
               Launched on pump.fun. No presale, no private round. Every team wallet that buys at launch is listed on our Transparency page.
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B]">
-              <Lock className="w-6 h-6 text-[#49200B]" />
+          {/* Card 2: Authorities Revoked (Bold Emerald Green) */}
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#059669] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Lock className="w-6 h-6 text-[#059669]" />
             </div>
-            <h3 className="text-xl font-bold font-heading text-[#49200B] mb-2">
+            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Authorities Revoked
             </h3>
-            <p className="text-sm text-[#79513B] font-medium leading-relaxed">
+            <p className="text-sm text-emerald-100 font-semibold leading-relaxed">
               Mint and freeze authority are revoked at launch, so no new $DODO can be created and no wallet can be frozen. Check it on Solscan.
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B]">
-              <Globe2 className="w-6 h-6 text-[#49200B]" />
+          {/* Card 3: Graduates On-Chain (Bold Royal Solana Indigo) */}
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#4F46E5] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <Globe2 className="w-6 h-6 text-[#4F46E5]" />
             </div>
-            <h3 className="text-xl font-bold font-heading text-[#49200B] mb-2">
+            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Graduates On-Chain
             </h3>
-            <p className="text-sm text-[#79513B] font-medium leading-relaxed">
+            <p className="text-sm text-indigo-100 font-semibold leading-relaxed">
               When the pump.fun bonding curve completes (around a $69k market cap), liquidity moves to a Solana DEX automatically.
             </p>
           </div>
 
-          <div className="cartoon-card bg-[#FFF9F0] rounded-3xl p-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B]">
-              <PawPrint className="w-6 h-6 text-[#49200B]" />
+          {/* Card 4: Paws for a Cause (Bold Ruby Coral) */}
+          <div
+            onMouseEnter={() => sounds.pop()}
+            className="cartoon-card bg-[#E11D48] text-white rounded-3xl p-6 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-4 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+              <PawPrint className="w-6 h-6 text-[#E11D48]" />
             </div>
-            <h3 className="text-xl font-bold font-heading text-[#49200B] mb-2">
+            <h3 className="text-xl font-extrabold font-heading text-white mb-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Paws for a Cause
             </h3>
-            <p className="text-sm text-[#79513B] font-medium leading-relaxed">
+            <p className="text-sm text-rose-100 font-semibold leading-relaxed">
               1% of the supply is set aside for pet shelters and orphanages, starting in India. Holders vote on which shelters receive it.
             </p>
           </div>

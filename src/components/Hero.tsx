@@ -424,65 +424,69 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBuyModal }) => {
           </div>
         </div>
 
-        {/* 4 Pillars Grid (Cohesive warm card design system) */}
+        {/* 4 Pillars Grid (Bold vibrant cartoon card design with high-contrast readable text) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
+          {/* Pillar 1: Marketing Tokens (Bold Sunset Orange) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#EA580C] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#EA580C] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Marketing tokens
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-orange-100 leading-relaxed font-semibold">
               Ads, trending and listings are paid in SOL from our own pocket. We never sell $DODO to pay for ads.
             </p>
           </div>
 
+          {/* Pillar 2: Every Team Wallet Public (Bold Emerald Green) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#059669] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#C6EAD7] border-2 border-[#49200B] flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-2xl mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               👁️
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Every team wallet public
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed font-semibold">
               Each Guardian, dev and charity wallet is listed with its Solscan link, so you can watch every move.
             </p>
           </div>
 
+          {/* Pillar 3: For Pet Shelters (Bold Ruby Coral) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#E11D48] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#F7D9C7] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#E11D48] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               1%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               For pet shelters
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-rose-100 leading-relaxed font-semibold">
               A public charity wallet. Holders vote on the shelters, and every donation is posted with proof.
             </p>
           </div>
 
+          {/* Pillar 4: Buy & Sell Tax (Bold Royal Solana Indigo) */}
           <div
             onMouseEnter={() => sounds.pop()}
-            className="cartoon-card bg-[#FFF9F0] rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
+            className="cartoon-card bg-[#4F46E5] text-white rounded-3xl p-5 hover:-translate-y-1 hover:shadow-[4px_5px_0px_#49200B] transition-all duration-200 cursor-pointer group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-[#FFD36A] border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#49200B] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-white border-2 border-[#49200B] flex items-center justify-center text-lg font-extrabold font-heading text-[#4F46E5] mb-3 shadow-[2px_2px_0px_#49200B] group-hover:scale-105 transition-transform">
               0%
             </div>
-            <h3 className="text-lg font-bold font-heading text-[#49200B] mb-1.5">
+            <h3 className="text-lg font-bold font-heading text-white mb-1.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
               Buy &amp; sell tax
             </h3>
-            <p className="text-xs sm:text-sm text-[#79513B] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-indigo-100 leading-relaxed font-semibold">
               A standard Solana token. Mint and freeze authority are revoked at launch.
             </p>
           </div>
